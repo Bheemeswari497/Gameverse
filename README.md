@@ -1,4 +1,3 @@
-# Gameverse
 # 🎮 GameVerse
 
 A full-stack gaming platform built to bring multiple interactive games into one place with modern web technologies.
