@@ -1,14 +1,36 @@
-function Home() {
-  return (
-    <div>
-      <h1>Welcome to GameVerse 🎮</h1>
+import gamesData from "../data/gamesData";
+import GameCard from "../components/GameCard";
 
-      <p>
-        Play games, track scores,
-        and compete with others.
-      </p>
-    </div>
-  );
+
+function Home(){
+
+return (
+
+<div>
+
+<h1>
+🎮 Welcome to GameVerse
+</h1>
+
+<p>
+Play • Learn • Compete
+</p>
+
+
+{
+gamesData.map((game)=>(
+<GameCard 
+key={game.id}
+game={game}
+/>
+))
+}
+
+
+</div>
+
+)
+
 }
 
 export default Home;
