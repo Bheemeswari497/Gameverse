@@ -1,23 +1,27 @@
-function GameCard({ game }) {
-  return (
-    <div className="game-card">
+function GameCard({game}){
 
-      <h2>🎮 {game.name}</h2>
+return(
 
-      <p>
-        Category: {game.category}
-      </p>
+<div className="card">
 
-      <p>
-        Level: {game.level}
-      </p>
+<h2>{game.name}</h2>
 
-      <button>
-        {game.status}
-      </button>
+<p>
+🎯 {game.category}
+</p>
 
-    </div>
-  );
+<p>
+⚡ {game.level}
+</p>
+
+<button>
+Play Soon 🚀
+</button>
+
+</div>
+
+)
+
 }
 
 export default GameCard;

@@ -1,0 +1,213 @@
+/* =====================
+   GameVerse Global CSS
+===================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #0f1117;
+  color: white;
+}
+
+
+/* =====================
+        Navbar
+===================== */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 10%;
+}
+
+
+nav h2 {
+  font-size: 28px;
+}
+
+
+.links {
+  display: flex;
+  gap: 35px;
+}
+
+
+nav a {
+  text-decoration: none;
+  color: #b6bdc9;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+
+nav a:hover {
+  color: #8b5cf6;
+}
+
+
+
+/* =====================
+        Home Page
+===================== */
+
+.home {
+  text-align: center;
+  margin-top: 80px;
+}
+
+
+.home h1 {
+  font-size: 58px;
+  margin-bottom: 20px;
+}
+
+
+.home p {
+  font-size: 23px;
+  color: #a0a7b5;
+}
+
+
+
+/* =====================
+        Games
+===================== */
+
+.games {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  margin-top: 60px;
+  flex-wrap: wrap;
+}
+
+
+
+.card {
+
+  background: #1e293b;
+  width: 270px;
+
+  padding: 35px 25px;
+
+  border-radius: 22px;
+
+  transition: 0.3s;
+
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+
+
+
+.card:hover {
+
+  transform: translateY(-12px);
+
+  box-shadow: 0 0 25px #7c3aed;
+
+}
+
+
+
+.card h2 {
+
+  font-size: 25px;
+
+  margin-bottom: 25px;
+
+}
+
+
+
+.card p {
+
+  color:#cbd5e1;
+
+  font-size:20px;
+
+  margin:10px 0;
+
+}
+
+
+
+.card button {
+
+  margin-top:20px;
+
+  padding:12px 35px;
+
+  border:none;
+
+  border-radius:12px;
+
+  cursor:pointer;
+
+  background:#7c3aed;
+
+  color:white;
+
+  font-size:16px;
+
+  transition:0.3s;
+
+}
+
+
+
+.card button:hover {
+
+  background:#6d28d9;
+
+  transform:scale(1.05);
+
+}
+
+
+
+/* =====================
+        Footer
+===================== */
+
+footer {
+
+  margin-top:100px;
+
+  text-align:center;
+
+  color:#94a3b8;
+
+  font-size:18px;
+
+}
+
+
+/* =====================
+      Responsive
+===================== */
+
+@media(max-width:768px){
+
+  nav {
+    flex-direction:column;
+    gap:20px;
+  }
+
+
+  .home h1 {
+    font-size:40px;
+  }
+
+
+  .games {
+    flex-direction:column;
+    align-items:center;
+  }
+
+}

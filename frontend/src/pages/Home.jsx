@@ -4,28 +4,33 @@ import GameCard from "../components/GameCard";
 
 function Home(){
 
-return (
+return(
 
-<div>
+<div className="home">
 
 <h1>
-🎮 Welcome to GameVerse
+Welcome to GameVerse 🎮
 </h1>
 
 <p>
-Play • Learn • Compete
+Play • Compete • Level Up
 </p>
 
 
+<div className="games">
+
 {
 gamesData.map((game)=>(
-<GameCard 
+
+<GameCard
 key={game.id}
 game={game}
 />
+
 ))
 }
 
+</div>
 
 </div>
 

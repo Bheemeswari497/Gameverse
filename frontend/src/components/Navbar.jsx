@@ -1,15 +1,21 @@
-function Navbar() {
-  return (
-    <nav>
-      <h2>🎮 GameVerse</h2>
+function Navbar(){
 
-      <ul>
-        <li>Home</li>
-        <li>Games</li>
-        <li>Login</li>
-      </ul>
-    </nav>
-  );
+return(
+
+<div className="navbar">
+
+<h2>🎮 GameVerse</h2>
+
+<div className="links">
+  <a>Home</a>
+  <a>Games</a>
+  <a>Login</a>
+</div>
+
+</div>
+
+)
+
 }
 
 export default Navbar;
