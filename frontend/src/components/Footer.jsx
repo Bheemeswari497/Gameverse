@@ -1,9 +1,7 @@
 function Footer() {
   return (
     <footer>
-      <p>
-        © 2026 GameVerse | Built with ❤️
-      </p>
+      © 2026 GameVerse | Built with ❤️
     </footer>
   );
 }

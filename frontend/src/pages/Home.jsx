@@ -1,41 +1,42 @@
-import gamesData from "../data/gamesData";
 import GameCard from "../components/GameCard";
+import gamesData from "../data/gamesData";
 
 
-function Home(){
+function Home() {
 
-return(
+  return (
 
-<div className="home">
+    <div className="home">
 
-<h1>
-Welcome to GameVerse 🎮
-</h1>
+      <h1>
+        Welcome to GameVerse 🎮
+      </h1>
 
-<p>
-Play • Compete • Level Up
-</p>
+      <p>
+        Play • Compete • Level Up
+      </p>
 
 
-<div className="games">
+      <div className="games">
 
-{
-gamesData.map((game)=>(
+        {
+          gamesData.map((game)=>(
 
-<GameCard
-key={game.id}
-game={game}
-/>
+            <GameCard 
+              key={game.id}
+              game={game}
+            />
 
-))
+          ))
+        }
+
+      </div>
+
+    </div>
+
+  );
+
 }
 
-</div>
-
-</div>
-
-)
-
-}
 
 export default Home;
