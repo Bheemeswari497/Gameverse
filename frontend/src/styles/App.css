@@ -211,3 +211,83 @@ footer {
   }
 
 }
+
+/* Tic Tac Toe Page */
+
+.game-page {
+  text-align: center;
+  margin-top: 50px;
+}
+
+
+.game-page h1 {
+  font-size: 45px;
+  margin-bottom: 20px;
+}
+
+
+.game-page h2 {
+  color: #a78bfa;
+  margin-bottom: 30px;
+}
+
+
+/* Board */
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 90px);
+  gap: 15px;
+  justify-content: center;
+}
+
+
+/* Boxes */
+
+.box {
+  width: 90px;
+  height: 90px;
+
+  background: #1e293b;
+  color: white;
+
+  border: none;
+  border-radius: 15px;
+
+  font-size: 40px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+
+.box:hover {
+  background: #334155;
+  transform: scale(1.05);
+}
+
+
+/* Restart Button */
+
+.reset {
+  margin-top: 35px;
+
+  padding: 12px 35px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: #7c3aed;
+  color: white;
+
+  font-size: 18px;
+
+  cursor: pointer;
+}
+
+
+.reset:hover {
+  background: #8b5cf6;
+}
