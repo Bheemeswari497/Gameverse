@@ -291,3 +291,31 @@ footer {
 .reset:hover {
   background: #8b5cf6;
 }
+
+.snake-board{
+  display:grid;
+  grid-template-columns:repeat(15,25px);
+  gap:5px;
+  justify-content:center;
+  margin:30px;
+}
+
+
+.cell,
+.snake,
+.food{
+  width:25px;
+  height:25px;
+  background:#1e293b;
+  border-radius:5px;
+}
+
+
+.snake{
+  background:#7c3aed;
+}
+
+
+.food{
+  background:#ef4444;
+}
