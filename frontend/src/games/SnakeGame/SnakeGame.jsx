@@ -5,12 +5,14 @@ function SnakeGame() {
   const size = 15;
 
 
-  const [snake, setSnake] = useState([
+  const initialSnake = [
     { x: 7, y: 7 },
     { x: 6, y: 7 },
     { x: 5, y: 7 }
-  ]);
+  ];
 
+
+  const [snake, setSnake] = useState(initialSnake);
 
   const [food, setFood] = useState({
     x: 10,
@@ -18,43 +20,43 @@ function SnakeGame() {
   });
 
 
-  const [direction, setDirection] = useState({
-    x: 1,
-    y: 0
-  });
+  const [direction, setDirection] =
+    useState({
+      x: 1,
+      y: 0
+    });
 
 
-  const [score, setScore] = useState(0);
+  const [score,setScore] = useState(0);
 
-  const [gameOver, setGameOver] = useState(false);
-
-
-
-  // Snake movement
-
-  useEffect(() => {
-
-    const move = setInterval(() => {
+  const [gameOver,setGameOver] = useState(false);
 
 
-      if (gameOver) return;
+
+  useEffect(()=>{
 
 
-      setSnake(prev => {
+    const timer = setInterval(()=>{
+
+
+      if(gameOver) return;
+
+
+
+      setSnake(prev=>{
 
 
         const head = {
 
           x: prev[0].x + direction.x,
+
           y: prev[0].y + direction.y
 
         };
 
 
 
-        // Game Over condition
-
-        if (
+        if(
 
           head.x < 0 ||
           head.y < 0 ||
@@ -63,14 +65,12 @@ function SnakeGame() {
           head.y >= size ||
 
           prev.some(
-
             part =>
-              part.x === head.x &&
-              part.y === head.y
-
+            part.x === head.x &&
+            part.y === head.y
           )
 
-        ) {
+        ){
 
           setGameOver(true);
 
@@ -81,43 +81,35 @@ function SnakeGame() {
 
 
         let newSnake = [
+
           head,
+
           ...prev
+
         ];
 
 
 
-        // Food eat
-
-        if (
-
+        if(
           head.x === food.x &&
           head.y === food.y
+        ){
 
-        ) {
-
-
-          setScore(
-            score => score + 1
-          );
+          setScore(s=>s+1);
 
 
           setFood({
 
-            x: Math.floor(
-              Math.random() * size
-            ),
+            x:Math.floor(Math.random()*size),
 
-            y: Math.floor(
-              Math.random() * size
-            )
+            y:Math.floor(Math.random()*size)
 
           });
 
-
         }
 
-        else {
+
+        else{
 
           newSnake.pop();
 
@@ -132,67 +124,44 @@ function SnakeGame() {
 
 
 
-    }, 200);
+    },200);
 
 
 
-    return () => clearInterval(move);
+    return()=>clearInterval(timer);
 
 
 
-  }, [direction, food, gameOver]);
+  },[direction,food,gameOver]);
 
 
 
 
 
-  // Keyboard controls
-
-  useEffect(() => {
+  useEffect(()=>{
 
 
-    function control(e) {
+    function control(e){
 
 
-      if (e.key === "ArrowUp") {
+      if(e.key==="ArrowUp" && direction.y!==1)
 
-        setDirection({
-          x: 0,
-          y: -1
-        });
-
-      }
+        setDirection({x:0,y:-1});
 
 
-      if (e.key === "ArrowDown") {
+      if(e.key==="ArrowDown" && direction.y!==-1)
 
-        setDirection({
-          x: 0,
-          y: 1
-        });
-
-      }
+        setDirection({x:0,y:1});
 
 
-      if (e.key === "ArrowLeft") {
+      if(e.key==="ArrowLeft" && direction.x!==1)
 
-        setDirection({
-          x: -1,
-          y: 0
-        });
-
-      }
+        setDirection({x:-1,y:0});
 
 
-      if (e.key === "ArrowRight") {
+      if(e.key==="ArrowRight" && direction.x!==-1)
 
-        setDirection({
-          x: 1,
-          y: 0
-        });
-
-      }
-
+        setDirection({x:1,y:0});
 
     }
 
@@ -204,64 +173,43 @@ function SnakeGame() {
     );
 
 
-
-    return () =>
+    return()=>{
 
       window.removeEventListener(
         "keydown",
         control
       );
 
+    };
 
 
-  }, []);
+  },[direction]);
 
 
 
 
 
-  // Restart Game
+  function restart(){
 
-  function restart() {
-
-
-    setSnake([
-
-      { x: 7, y: 7 },
-      { x: 6, y: 7 },
-      { x: 5, y: 7 }
-
-    ]);
-
-
+    setSnake(initialSnake);
 
     setDirection({
-
-      x: 1,
-      y: 0
-
+      x:1,
+      y:0
     });
-
 
 
     setFood({
-
-      x: 10,
-      y: 8
-
+      x:10,
+      y:8
     });
-
 
 
     setScore(0);
 
-
     setGameOver(false);
 
-
   }
-
-
 
 
 
@@ -275,99 +223,84 @@ function SnakeGame() {
       <h1>🐍 Snake Game</h1>
 
 
-
       <h2>
 
-        {
-
-          gameOver
-
-          ? "Game Over 💀"
-
-          : `Score : ${score}`
-
-        }
+      {
+        gameOver
+        ? "Game Over 💀"
+        : `Score : ${score}`
+      }
 
       </h2>
-
 
 
 
       <div className="snake-board">
 
 
-        {
+      {
+
+      [...Array(size*size)].map((_,index)=>{
 
 
-          [...Array(size * size)].map(
+        const x=index%size;
 
-            (_, index) => {
-
-
-              const x = index % size;
-
-              const y =
-                Math.floor(index / size);
+        const y=Math.floor(index/size);
 
 
 
-              const isSnake =
+        const snakeIndex = snake.findIndex(
 
-                snake.some(
+          part =>
 
-                  part =>
+          part.x===x &&
+          part.y===y
 
-                  part.x === x &&
-                  part.y === y
-
-                );
+        );
 
 
 
-              const isFood =
+        const isFood =
 
-                food.x === x &&
-                food.y === y;
-
-
+        food.x===x &&
+        food.y===y;
 
 
-              return (
 
-                <div
+        return (
 
-                  key={index}
+          <div
 
-
-                  className={
-
-                    isSnake
-
-                    ? "snake"
-
-                    : isFood
-
-                    ? "food"
-
-                    : "cell"
-
-                  }
+          key={index}
 
 
-                />
+          className={
+
+            snakeIndex===0
+
+            ? "snake-head cell"
+
+            : snakeIndex>0
+
+            ? "snake-body cell"
+
+            : isFood
+
+            ? "food cell"
+
+            : "cell"
+
+          }
+
+          />
 
 
-              );
+        );
 
 
-            }
+      })
 
-
-          )
-
-
-        }
-
+      }
 
 
       </div>
@@ -376,28 +309,21 @@ function SnakeGame() {
 
 
       <button
-
-        className="reset"
-
-        onClick={restart}
-
+      className="reset"
+      onClick={restart}
       >
 
-        Restart 🔄
+      Restart 🔄
 
       </button>
 
 
 
-
     </div>
-
 
   );
 
-
 }
-
 
 
 export default SnakeGame;

@@ -1,22 +1,19 @@
 import { Link } from "react-router-dom";
 
-
 function GameCard({ game }) {
 
-  let gamePath = "#";
-
+  let path = "";
 
   if (game.name === "Tic Tac Toe") {
-
-    gamePath = "/tic-tac-toe";
-
+    path = "/tic-tac-toe";
   }
 
+  else if (game.name === "Snake Game") {
+    path = "/snake";
+  }
 
-  if (game.name === "Snake Game") {
-
-    gamePath = "/snake";
-
+  else if (game.name === "Memory Game") {
+    path = "/memory";
   }
 
 
@@ -26,25 +23,15 @@ function GameCard({ game }) {
 
       <h2>{game.name}</h2>
 
+      <p>🎯 {game.category}</p>
 
-      <p>
-        🎯 {game.category}
-      </p>
-
-
-      <p>
-        ⚡ {game.level}
-      </p>
+      <p>⚡ {game.level}</p>
 
 
-      <Link to={gamePath}>
+      <Link to={path}>
 
         <button>
-          {
-            gamePath === "#"
-            ? "Coming Soon 🚀"
-            : "Play Now 🎮"
-          }
+          Play Now 🎮
         </button>
 
       </Link>
@@ -55,6 +42,5 @@ function GameCard({ game }) {
   );
 
 }
-
 
 export default GameCard;

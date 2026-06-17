@@ -228,24 +228,67 @@ nav a:hover {
 
 }
 
+/* =====================
+   Snake Game Premium UI
+===================== */
+
+.snake-board {
+
+  width: 500px;
+  height: 500px;
+
+  margin: 30px auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(15, 1fr);
+
+  background: #111827;
+
+  padding: 18px;
+
+  border-radius: 30px;
+
+  box-shadow:
+  0 0 40px rgba(124,58,237,0.7);
+
+}
+
+
+/* remove grid look */
+
+.cell {
+
+  background: transparent;
+
+}
+
 
 /* Snake Body */
 
 .snake {
 
   background: linear-gradient(
-    135deg,
+    90deg,
     #22c55e,
-    #16a34a
+    #86efac
   );
 
-  border-radius: 6px;
+  border-radius: 8px;
 
   box-shadow:
   0 0 12px #22c55e;
 
 }
 
+
+/* Snake Head */
+
+.snake:first-child {
+
+  border-radius: 15px;
+
+}
 
 
 /* Food */
@@ -256,84 +299,145 @@ nav a:hover {
 
   border-radius:50%;
 
+
   box-shadow:
-  0 0 20px #ef4444;
+  0 0 20px #ef4444,
+  0 0 40px #ef4444;
 
 }
 
 
-/* =====================
-        Buttons
-===================== */
+/* Snake Page */
+
+.game-page {
+
+  text-align:center;
+
+  margin-top:40px;
+
+}
+
+
+.game-page h1 {
+
+  font-size:55px;
+
+}
+
+
+.game-page h2 {
+
+  color:#a855f7;
+
+}
+
+
+/* Button */
 
 .reset {
 
   margin-top:25px;
 
-  padding:14px 45px;
+  padding:15px 55px;
 
   border:none;
 
-  border-radius:15px;
+  border-radius:20px;
 
   background:linear-gradient(
     135deg,
     #7c3aed,
-    #9333ea
+    #ec4899
   );
 
   color:white;
 
-  font-size:18px;
+  font-size:20px;
 
   cursor:pointer;
 
-  transition:0.3s;
+}
+
+.reset:hover{
+
+ transform:scale(1.05);
 
 }
 
-.reset:hover {
 
-  transform:scale(1.05);
-
-}
 
 
 /* =====================
-        Footer
+ Memory Game Pro UI
 ===================== */
 
-footer {
-  margin-top:100px;
-  text-align:center;
-  color:#94a3b8;
-  font-size:18px;
+.memory-board {
+
+  width: 520px;
+
+  margin: 40px auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(4,100px);
+
+  gap: 20px;
+
+  justify-content:center;
+
 }
 
 
-/* =====================
-        Responsive
-===================== */
 
-@media(max-width:768px){
+.memory-card {
 
-  nav {
-    flex-direction:column;
-    gap:20px;
-  }
+  height:100px;
 
-  .home h1 {
-    font-size:40px;
-  }
+  background:#1e293b;
 
-  .games {
-    flex-direction:column;
-    align-items:center;
-  }
+  display:flex;
 
-  .snake-board {
-    width:330px;
-    height:330px;
-  }
+  align-items:center;
+
+  justify-content:center;
+
+
+  border-radius:20px;
+
+
+  font-size:45px;
+
+
+  cursor:pointer;
+
+
+  transition:0.4s;
+
+
+  box-shadow:
+  0 0 15px rgba(124,58,237,.4);
+
+}
+
+
+
+.memory-card:hover {
+
+  transform:scale(1.08);
+
+}
+
+
+
+.memory-card.open {
+
+  background:linear-gradient(
+    135deg,
+    #7c3aed,
+    #ec4899
+  );
+
+
+  transform:rotateY(180deg);
 
 }
