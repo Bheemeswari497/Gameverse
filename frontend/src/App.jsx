@@ -9,6 +9,7 @@ import Login from "./pages/Login";
 import TicTacToe from "./games/TicTacToe/TicTacToe";
 import SnakeGame from "./games/SnakeGame/SnakeGame";
 import MemoryGame from "./games/MemoryGame/MemoryGame";
+import QuizGame from "./games/QuizGame/QuizGame";
 
 import "./styles/App.css";
 
@@ -43,6 +44,10 @@ function App() {
         <Route 
           path="/memory"
           element={<MemoryGame />}
+        />
+        <Route 
+            path="/quiz"
+          element={<QuizGame />}
         />
 
         <Route 

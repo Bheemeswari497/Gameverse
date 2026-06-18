@@ -1,27 +1,33 @@
-const gamesData = [
+const games = [
 
-{
-id:1,
-name:"Tic Tac Toe",
-category:"Strategy",
-level:"Beginner"
-},
+  {
+    name:"Tic Tac Toe",
+    category:"🎯 Strategy",
+    level:"⚡ Beginner",
+    path:"/tic-tac-toe"
+  },
 
-{
-id:2,
-name:"Snake Game",
-category:"Arcade",
-level:"Intermediate"
-},
+  {
+    name:"Snake Game",
+    category:"🎯 Arcade",
+    level:"⚡ Intermediate",
+    path:"/snake"
+  },
 
-{
-id:3,
-name:"Memory Game",
-category:"Puzzle",
-level:"Intermediate"
-}
+  {
+    name:"Memory Game",
+    category:"🎯 Puzzle",
+    level:"⚡ Intermediate",
+    path:"/memory"
+  },
+
+  {
+    name:"Quiz Battle",
+    category:"🎯 Knowledge",
+    level:"⚡ Beginner",
+    path:"/quiz"
+  }
 
 ];
 
-
-export default gamesData;
+export default games;

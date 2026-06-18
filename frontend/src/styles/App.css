@@ -441,3 +441,102 @@ nav a:hover {
   transform:rotateY(180deg);
 
 }
+
+/* =====================
+        Quiz Battle
+===================== */
+
+.quiz-box {
+
+  width: 500px;
+
+  margin: 40px auto;
+
+  padding: 35px;
+
+  background: #1e293b;
+
+  border-radius: 25px;
+
+  box-shadow:
+  0 0 30px #7c3aed;
+
+}
+
+
+.quiz-box h2 {
+
+  margin-bottom: 30px;
+
+  color: #a855f7;
+
+}
+
+
+/* Quiz Options */
+
+.quiz-box button,
+.option-btn {
+
+  display: block;
+
+  width: 100%;
+
+  margin: 15px 0;
+
+  padding: 15px;
+
+  border: none;
+
+  border-radius: 15px;
+
+  background: #7c3aed;
+
+  color: white;
+
+  font-size: 18px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+
+}
+
+
+.option-btn:hover {
+
+  transform: scale(1.05);
+
+  background: #9333ea;
+
+}
+
+
+/* Correct Answer */
+
+.option-btn.correct {
+
+  background: #22c55e !important;
+
+  color: white;
+
+  box-shadow:
+  0 0 20px #22c55e,
+  0 0 40px #22c55e;
+
+}
+
+
+/* Wrong Answer */
+
+.option-btn.wrong {
+
+  background: #ef4444 !important;
+
+  color: white;
+
+  box-shadow:
+  0 0 20px #ef4444,
+  0 0 40px #ef4444;
+
+}
