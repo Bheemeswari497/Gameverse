@@ -540,3 +540,111 @@ nav a:hover {
   0 0 40px #ef4444;
 
 }
+
+/* =====================
+   Profile + Leaderboard
+===================== */
+
+
+.profile{
+
+text-align:center;
+
+margin-top:50px;
+
+}
+
+
+.profile h1{
+
+font-size:50px;
+
+}
+
+
+.profile-card{
+
+width:400px;
+
+margin:30px auto;
+
+padding:30px;
+
+background:#1e293b;
+
+border-radius:25px;
+
+box-shadow:
+0 0 25px #7c3aed;
+
+}
+
+
+.profile-card h2{
+
+font-size:35px;
+
+color:#a855f7;
+
+}
+
+
+.profile-card p{
+
+font-size:20px;
+
+margin:15px;
+
+}
+
+
+
+/* Leaderboard */
+
+
+.leaderboard{
+
+margin-top:50px;
+
+}
+
+
+.rank-card{
+
+width:450px;
+
+margin:20px auto;
+
+padding:20px;
+
+
+background:#111827;
+
+
+border-radius:20px;
+
+
+transition:.3s;
+
+
+box-shadow:
+0 0 15px rgba(124,58,237,.5);
+
+}
+
+
+.rank-card:hover{
+
+transform:scale(1.05);
+
+box-shadow:
+0 0 25px #9333ea;
+
+}
+
+
+.rank-card h2{
+
+color:#a855f7;
+
+}

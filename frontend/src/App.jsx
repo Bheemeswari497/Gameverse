@@ -5,6 +5,8 @@ import Footer from "./components/Footer";
 
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import Profile from "./pages/Profile";
+
 
 import TicTacToe from "./games/TicTacToe/TicTacToe";
 import SnakeGame from "./games/SnakeGame/SnakeGame";
@@ -28,6 +30,11 @@ function App() {
           path="/" 
           element={<Home />} 
         />
+
+        <Route 
+            path="/profile"
+            element={<Profile />}
+           />
 
 
         <Route 
