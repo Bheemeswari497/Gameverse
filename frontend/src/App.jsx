@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
+import Dashboard from "./pages/Dashboard";
 
 
 import TicTacToe from "./games/TicTacToe/TicTacToe";
@@ -35,7 +36,10 @@ function App() {
             path="/profile"
             element={<Profile />}
            />
-
+        <Route
+            path="/dashboard"
+            element={<Dashboard />}
+        />
 
         <Route 
           path="/tic-tac-toe" 

@@ -648,3 +648,51 @@ box-shadow:
 color:#a855f7;
 
 }
+
+/* Dashboard */
+
+.dashboard{
+  text-align:center;
+  margin-top:40px;
+}
+
+.stats{
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  flex-wrap:wrap;
+  margin:40px 0;
+}
+
+.stat-card{
+  width:200px;
+  background:#1e293b;
+  padding:25px;
+  border-radius:20px;
+  transition:.3s;
+  box-shadow:0 0 15px rgba(124,58,237,.4);
+}
+
+.stat-card:hover{
+  transform:translateY(-8px);
+}
+
+.stat-card h2{
+  font-size:40px;
+}
+
+.stat-card h3{
+  margin:10px 0;
+}
+
+.recent-games{
+  width:500px;
+  margin:30px auto;
+}
+
+.recent-card{
+  background:#111827;
+  padding:18px;
+  margin:12px 0;
+  border-radius:15px;
+}
